@@ -11,7 +11,6 @@ Node::Node(char c, const string &str) {
     pRight = nullptr;
 }
 
-
 Node::~Node() {
 
 }
@@ -24,11 +23,11 @@ void Node::setString(const string &str) {
     mStr = str;
 }
 
-char Node::getChar() {
+char Node::getChar() const{
     return mChar;
 }
 
-string Node::getStr() {
+string Node::getStr() const{
     return mStr;
 }
 
@@ -40,10 +39,14 @@ void Node::setRight(Node *right) {
     pRight = right;
 }
 
-Node *Node::getLeft() {
+Node *Node::getLeft(){
     return pLeft;
 }
-Node *Node::getRight() {
+Node *Node::getRight(){
     return pRight;
 }
 
+ostream &operator << (ostream &out, const Node &node) {
+    out << node.getChar() << ":" << node.getStr() << endl;
+    return out;
+}

@@ -9,9 +9,9 @@
 #include <string>
 
 using std::cout;
-using std::cin;
 using std::endl;
 using std::string;
+using std::ostream;
 
 class Node {
 public:
@@ -20,8 +20,8 @@ public:
 
     void setChar(char c);
     void setString(const string &str);
-    char getChar();
-    string getStr();
+    char getChar() const;
+    string getStr() const;
     void setLeft(Node *left);
     void setRight(Node *right);
     Node *getLeft();
@@ -35,5 +35,6 @@ private:
     Node *pRight;
 };
 
+ostream & operator << (ostream &out, const Node &node);
 
 #endif //PA7_NODE_H
